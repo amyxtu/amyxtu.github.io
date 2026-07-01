@@ -4,8 +4,8 @@
   "description": "Amy Tu — Data & Engineering, UC Berkeley '26. Portfolio and projects.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fdf8f5",
-  "theme_color": "#c97a92",
+  "background_color": "#ffffff",
+  "theme_color": "#6d635a",
   "icons": [
     { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
   ]
