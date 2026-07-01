@@ -1,6 +1,15 @@
 // ── Year ──────────────────────────────────────
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// ── Theme toggle ───────────────────────────────
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('theme', next); } catch (e) {}
+});
+
 // ── Navbar scroll effect ───────────────────────
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -19,7 +28,7 @@ navLinks.querySelectorAll('a').forEach(link => {
 
 // ── Scroll reveal ──────────────────────────────
 const revealEls = document.querySelectorAll(
-  '#about .container > *, #projects .container > *, #contact .container > *, .project-card, .about-photo, .about-text, .contact-info, .contact-form'
+  '#about .container > *, #experience .container > *, #projects .container > *, #contact .container > *, .project-card, .timeline-item, .about-photo, .about-text, .contact-info, .contact-form'
 );
 revealEls.forEach(el => el.classList.add('reveal'));
 
@@ -56,11 +65,11 @@ function clearOnInput(fieldId, errorId) {
     document.getElementById(errorId).textContent = '';
   });
 }
-['name', 'email', 'subject', 'message'].forEach((f, i) => {
+['name', 'email', 'subject', 'message'].forEach(f => {
   clearOnInput(f, `${f}-error`);
 });
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
 
   const nameOk    = validate('name',    'name-error',    v => v.length >= 2,            'Name must be at least 2 characters.');
@@ -74,18 +83,51 @@ form.addEventListener('submit', e => {
   const btnText  = btn.querySelector('.btn-text');
   const btnSend  = btn.querySelector('.btn-sending');
   const success  = document.getElementById('form-success');
+  const fail     = document.getElementById('form-fail');
 
+  success.hidden = true;
+  fail.hidden = true;
   btn.disabled = true;
   btnText.hidden = true;
   btnSend.hidden = false;
 
-  // Simulate async submission (wire up to a real endpoint as needed)
-  setTimeout(() => {
+  const accessKey = form.querySelector('input[name="access_key"]').value;
+  const keyIsSet = accessKey && !accessKey.startsWith('REPLACE_WITH');
+
+  const done = ok => {
     btn.disabled = false;
     btnText.hidden = false;
     btnSend.hidden = true;
-    form.reset();
-    success.hidden = false;
-    setTimeout(() => { success.hidden = true; }, 6000);
-  }, 1400);
+    if (ok) {
+      form.reset();
+      success.hidden = false;
+      setTimeout(() => { success.hidden = true; }, 8000);
+    } else {
+      fail.hidden = false;
+    }
+  };
+
+  // If no Web3Forms key is configured yet, fall back to the visitor's email client.
+  if (!keyIsSet) {
+    const subject = encodeURIComponent(document.getElementById('subject').value.trim());
+    const body = encodeURIComponent(
+      `From: ${document.getElementById('name').value.trim()} <${document.getElementById('email').value.trim()}>\n\n` +
+      document.getElementById('message').value.trim()
+    );
+    window.location.href = `mailto:amyxtu@berkeley.edu?subject=${subject}&body=${body}`;
+    done(true);
+    return;
+  }
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+    const data = await res.json();
+    done(res.ok && data.success);
+  } catch (err) {
+    done(false);
+  }
 });

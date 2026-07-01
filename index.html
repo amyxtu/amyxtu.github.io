@@ -3,11 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amy Tu — Portfolio</title>
+
+  <!-- Primary Meta -->
+  <title>Amy Tu — Data &amp; Engineering · UC Berkeley '26</title>
+  <meta name="description" content="Amy Tu is a UC Berkeley senior (Economics + Data Science) building data-driven solutions. Portfolio, experience, and projects across data engineering, automation, and AI." />
+  <meta name="author" content="Amy Tu" />
+  <meta name="keywords" content="Amy Tu, data analyst, data engineering, UC Berkeley, portfolio, Python, SQL, Tesla, data science" />
+  <link rel="canonical" href="https://amyxtu.github.io/" />
+  <meta name="theme-color" content="#111111" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://amyxtu.github.io/" />
+  <meta property="og:title" content="Amy Tu — Data &amp; Engineering · UC Berkeley '26" />
+  <meta property="og:description" content="Building data-driven solutions at the intersection of tech and business." />
+  <meta property="og:image" content="https://amyxtu.github.io/Tu,%20Amy_Headshot.jpeg" />
+  <meta property="og:image:alt" content="Amy Tu" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amy Tu — Data &amp; Engineering · UC Berkeley '26" />
+  <meta name="twitter:description" content="Building data-driven solutions at the intersection of tech and business." />
+  <meta name="twitter:image" content="https://amyxtu.github.io/Tu,%20Amy_Headshot.jpeg" />
+
+  <!-- Icons / Manifest -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Set theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Amy Tu",
+    "url": "https://amyxtu.github.io/",
+    "image": "https://amyxtu.github.io/Tu,%20Amy_Headshot.jpeg",
+    "jobTitle": "Data Analytics & Automation Intern",
+    "worksFor": { "@type": "Organization", "name": "Tesla" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of California, Berkeley" },
+    "email": "mailto:amyxtu@berkeley.edu",
+    "sameAs": [
+      "https://linkedin.com/in/amyxtu",
+      "https://github.com/amyxtu"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -17,12 +75,19 @@
       <a class="nav-logo" href="#hero">Amy Tu</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -97,6 +162,67 @@
     </div>
   </section>
 
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <span class="section-label">Career</span>
+      <h2 class="section-title">Experience</h2>
+      <p class="section-sub">Where I've worked and what I've built.</p>
+
+      <!-- NOTE for Amy: adjust the dates / titles below to match your résumé exactly. -->
+      <ol class="timeline">
+        <li class="timeline-item">
+          <span class="timeline-date">2025 — Present</span>
+          <div class="timeline-body">
+            <h3>Data Analytics &amp; Automation Intern</h3>
+            <p class="timeline-org">Tesla</p>
+            <p>Build Python/SQL data pipelines, forecasting models, and BI dashboards to automate reporting and surface operational insights.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2024</span>
+          <div class="timeline-body">
+            <h3>Software Engineering Intern — STEP</h3>
+            <p class="timeline-org">Google</p>
+            <p>Selected for Google's STEP program; contributed to data engineering work and internal tooling alongside a partner intern and host team.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2023</span>
+          <div class="timeline-body">
+            <h3>Intern — Compliance Tooling</h3>
+            <p class="timeline-org">ServiceNow</p>
+            <p>Developed internal compliance tooling and automation to streamline workflows for engineering and governance teams.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2023</span>
+          <div class="timeline-body">
+            <h3>Data Intern</h3>
+            <p class="timeline-org">Kaiser Permanente</p>
+            <p>Worked with healthcare data to support analysis and reporting in a regulated environment.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2022</span>
+          <div class="timeline-body">
+            <h3>Product &amp; Automation Intern</h3>
+            <p class="timeline-org">Bloom Energy</p>
+            <p>Supported product automation initiatives, reducing manual effort across internal processes.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2022</span>
+          <div class="timeline-body">
+            <h3>AR Web Developer Intern</h3>
+            <p class="timeline-org">Playhouse</p>
+            <p>Built augmented-reality web experiences, working across front-end development and interactive design.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
   <!-- Projects -->
   <section id="projects">
     <div class="container">
@@ -165,7 +291,17 @@
           </div>
         </div>
 
-        <form id="contact-form" class="contact-form" novalidate>
+        <!--
+          This form posts to Web3Forms (free, no backend needed).
+          TO ACTIVATE: get a free access key at https://web3forms.com (enter amyxtu@berkeley.edu),
+          then replace REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY below with the key they email you.
+          Until then, the form falls back to opening the visitor's email client.
+        -->
+        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New message from your portfolio site" />
+          <input type="hidden" name="from_name" value="amyxtu.github.io" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" aria-hidden="true" tabindex="-1" />
           <div class="form-row">
             <div class="form-group">
               <label for="name">Name</label>
@@ -180,7 +316,7 @@
           </div>
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+            <input type="text" id="subject" name="user_subject" placeholder="What's this about?" required />
             <span class="form-error" id="subject-error"></span>
           </div>
           <div class="form-group">
@@ -194,6 +330,10 @@
           </button>
           <p class="form-success" id="form-success" hidden>
             Thanks for reaching out! I'll get back to you within 1-2 business days.
+          </p>
+          <p class="form-fail" id="form-fail" hidden>
+            Something went wrong. Please email me directly at
+            <a href="mailto:amyxtu@berkeley.edu">amyxtu@berkeley.edu</a>.
           </p>
         </form>
       </div>
