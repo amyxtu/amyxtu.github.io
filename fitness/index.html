@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lifting Toolkit — Amy Tu</title>
+  <meta name="description" content="A lifting toolkit by Amy Tu: one-rep-max calculator, barbell plate math, and a workout logger. Runs entirely in your browser." />
+  <meta name="theme-color" content="#6d635a" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
+    :root{
+      --bg:#ffffff;--bg-soft:#f7f5f3;--text:#2a2724;--muted:#948e86;--light:#5a544d;
+      --border:#eae8e5;--accent:#6d635a;--accent-soft:#e9e5e0;--radius:14px;
+    }
+    body{font-family:'Inter',sans-serif;font-weight:300;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:940px;margin:0 auto;padding:0 24px}
+    a{color:inherit}
+
+    header{padding:56px 0 40px;text-align:center;background:radial-gradient(60% 70% at 50% 0%,var(--accent-soft),transparent 70%)}
+    .back{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:28px;transition:color .2s}
+    .back:hover{color:var(--accent)}
+    h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.6rem,7vw,4rem);line-height:1.05;letter-spacing:-.01em}
+    .sub{color:var(--muted);font-size:.9rem;margin-top:10px}
+
+    .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:20px 0 72px}
+    .card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px 28px}
+    .card h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;margin-bottom:4px}
+    .card .hint{color:var(--muted);font-size:.8rem;margin-bottom:20px}
+    label{display:block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    .row{display:flex;gap:12px;margin-bottom:16px}
+    .row .field{flex:1}
+    input,select{width:100%;background:var(--bg-soft);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-family:'Inter',sans-serif;font-size:.95rem;color:var(--text);outline:none;transition:border-color .2s}
+    input:focus,select:focus{border-color:var(--accent)}
+    button{font-family:'Inter',sans-serif;cursor:pointer;border:none;border-radius:999px;background:var(--accent);color:#fff;padding:10px 22px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;transition:filter .2s,transform .2s}
+    button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+    button.ghost{background:transparent;color:var(--muted);border:1px solid var(--border);padding:8px 16px}
+    button.ghost:hover{color:var(--accent);border-color:var(--accent);transform:none;filter:none}
+
+    .result{margin-top:6px}
+    .big{font-family:'Cormorant Garamond',serif;font-size:2.6rem;line-height:1;color:var(--text)}
+    .big small{font-size:1rem;color:var(--muted);font-family:'Inter',sans-serif;font-weight:300}
+    .pct-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:.85rem}
+    .pct-table td{padding:6px 4px;border-bottom:1px solid var(--border);color:var(--light)}
+    .pct-table td:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--text)}
+
+    .plates{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .plate{padding:6px 12px;border-radius:999px;font-size:.8rem;background:var(--accent-soft);color:var(--light);border:1px solid var(--border)}
+    .note{color:var(--muted);font-size:.8rem;margin-top:12px}
+
+    .log-list{list-style:none;margin-top:8px}
+    .log-list li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:.9rem}
+    .log-list .ex{font-weight:400}
+    .log-list .meta{color:var(--muted);font-size:.82rem}
+    .log-list button{background:none;color:var(--muted);padding:2px 6px;font-size:1rem;text-transform:none;letter-spacing:0}
+    .log-list button:hover{color:#c0392b;transform:none;filter:none}
+    .total{margin-top:16px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:.9rem}
+    .total b{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.3rem}
+    .empty{color:var(--muted);font-size:.85rem;padding:12px 0}
+
+    footer{text-align:center;padding:28px;color:var(--muted);font-size:.75rem;border-top:1px solid var(--border)}
+    .demo-badge{display:inline-block;margin-top:6px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+    @media(max-width:520px){.row{flex-direction:column;gap:0}.row .field{margin-bottom:16px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="back" href="../">&larr; Back to portfolio</a>
+      <h1>Lifting Toolkit</h1>
+      <p class="sub">Three tools I actually use in the gym. Everything runs in your browser and saves locally.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="tools">
+
+      <!-- 1RM Calculator -->
+      <section class="card">
+        <h2>One-Rep Max</h2>
+        <p class="hint">Estimate your max and training percentages.</p>
+        <div class="row">
+          <div class="field">
+            <label for="orm-weight">Weight (lb)</label>
+            <input type="number" id="orm-weight" value="185" min="0" step="5" inputmode="decimal" />
+          </div>
+          <div class="field">
+            <label for="orm-reps">Reps</label>
+            <input type="number" id="orm-reps" value="5" min="1" max="12" step="1" inputmode="numeric" />
+          </div>
+        </div>
+        <button id="orm-btn">Calculate</button>
+        <div class="result" id="orm-result" hidden>
+          <p class="big"><span id="orm-max">—</span> <small>lb estimated 1RM</small></p>
+          <table class="pct-table"><tbody id="orm-table"></tbody></table>
+        </div>
+      </section>
+
+      <!-- Plate Calculator -->
+      <section class="card">
+        <h2>Plate Math</h2>
+        <p class="hint">What to load on each side of the bar.</p>
+        <div class="row">
+          <div class="field">
+            <label for="plate-total">Target (lb)</label>
+            <input type="number" id="plate-total" value="225" min="0" step="5" inputmode="decimal" />
+          </div>
+          <div class="field">
+            <label for="plate-bar">Bar (lb)</label>
+            <select id="plate-bar">
+              <option value="45" selected>45 (standard)</option>
+              <option value="35">35 (women's)</option>
+              <option value="15">15 (technique)</option>
+              <option value="0">0 (no bar)</option>
+            </select>
+          </div>
+        </div>
+        <button id="plate-btn">Load Bar</button>
+        <div class="result" id="plate-result" hidden>
+          <div class="plates" id="plate-list"></div>
+          <p class="note" id="plate-note"></p>
+        </div>
+      </section>
+
+      <!-- Workout Log -->
+      <section class="card">
+        <h2>Workout Log</h2>
+        <p class="hint">Log today's sets. Saved on this device.</p>
+        <div class="row">
+          <div class="field" style="flex:2">
+            <label for="log-ex">Exercise</label>
+            <input type="text" id="log-ex" placeholder="Back squat" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="log-wt">Weight</label><input type="number" id="log-wt" placeholder="185" min="0" step="5" inputmode="decimal" /></div>
+          <div class="field"><label for="log-sets">Sets</label><input type="number" id="log-sets" placeholder="5" min="1" step="1" inputmode="numeric" /></div>
+          <div class="field"><label for="log-reps">Reps</label><input type="number" id="log-reps" placeholder="5" min="1" step="1" inputmode="numeric" /></div>
+        </div>
+        <button id="log-btn">Add Set</button>
+        <ul class="log-list" id="log-list"></ul>
+        <div class="total" id="log-total" hidden><span>Total volume</span><b><span id="log-volume">0</span> lb</b></div>
+        <p class="empty" id="log-empty">Nothing logged yet today.</p>
+        <div style="margin-top:14px"><button class="ghost" id="log-clear" hidden>Clear log</button></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Built by Amy Tu · a lifting side project</p>
+    <span class="demo-badge">Live demo</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
