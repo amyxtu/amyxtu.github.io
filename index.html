@@ -3,11 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amy Tu — Portfolio</title>
+
+  <!-- Primary Meta -->
+  <title>Amy Tu · Data &amp; Engineering · UC Berkeley '26</title>
+  <meta name="description" content="Amy Tu is a UC Berkeley graduate (Economics + Data Science) building data-driven solutions. Portfolio, experience, and projects across data engineering, automation, and AI." />
+  <meta name="author" content="Amy Tu" />
+  <meta name="keywords" content="Amy Tu, data analyst, data engineering, UC Berkeley, portfolio, Python, SQL, Tesla, data science" />
+  <link rel="canonical" href="https://amyxtu.github.io/" />
+  <meta name="theme-color" content="#6d635a" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://amyxtu.github.io/" />
+  <meta property="og:title" content="Amy Tu · Data &amp; Engineering · UC Berkeley '26" />
+  <meta property="og:description" content="Building data-driven solutions at the intersection of tech and business." />
+  <meta property="og:image" content="https://amyxtu.github.io/Tu,%20Amy_Headshot.jpeg" />
+  <meta property="og:image:alt" content="Amy Tu" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amy Tu · Data &amp; Engineering · UC Berkeley '26" />
+  <meta name="twitter:description" content="Building data-driven solutions at the intersection of tech and business." />
+  <meta name="twitter:image" content="https://amyxtu.github.io/Tu,%20Amy_Headshot.jpeg" />
+
+  <!-- Icons / Manifest -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Set theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Amy Tu",
+    "url": "https://amyxtu.github.io/",
+    "image": "https://amyxtu.github.io/Tu,%20Amy_Headshot.jpeg",
+    "jobTitle": "Data Analytics & Automation Intern",
+    "worksFor": { "@type": "Organization", "name": "Tesla" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of California, Berkeley" },
+    "email": "mailto:amyxtu@berkeley.edu",
+    "sameAs": [
+      "https://linkedin.com/in/amyxtu",
+      "https://github.com/amyxtu"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -17,12 +75,19 @@
       <a class="nav-logo" href="#hero">Amy Tu</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -32,7 +97,7 @@
       <p class="hero-greeting">Hi, I'm</p>
       <h1 class="hero-name">Amy Tu</h1>
       <p class="hero-tagline">Data &amp; Engineering · UC Berkeley '26</p>
-      <p class="hero-sub">I build data-driven solutions at the intersection of tech and business.</p>
+      <p class="hero-sub">I build things with data: pipelines, dashboards, and AI tools.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View My Work</a>
         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -55,23 +120,14 @@
         </div>
         <div class="about-text">
           <p>
-            I'm a senior at UC Berkeley studying Economics with a Minor in Data Science, graduating May 2026.
-            I'm currently a Data Analytics &amp; Automation Intern at Tesla, where I build Python/SQL pipelines,
-            forecasting models, and BI dashboards. Previously I've interned at Google (STEP), ServiceNow,
-            Kaiser Permanente, Bloom Energy, and Playhouse — across data engineering, compliance tooling,
-            product automation, and AR web development.
+            I graduated from UC Berkeley in May 2026 with a degree in Economics and a minor in Data Science.
+            Currently a Data Analytics &amp; Automation Intern at Tesla, building pipelines, forecasting
+            models, and dashboards.
           </p>
           <p>
-            I founded the Girls Who Code Berkeley chapter in partnership with Berkeley High School and the
-            Public Library, and serve as Director of Technology at Becoming Businesswomen, where I help manage
-            a mentorship program connecting 100+ professionals with 1,000+ students. I'm also a former
-            Miss Vietnam San Jose titleholder, having volunteered 300+ hours and helped raise $100K+ for
-            underserved communities.
-          </p>
-          <p>
-            On campus I'm President of Barbell at Berkeley, Head of Finance for Women on Wall Street, and
-            Project Manager for Women in Computing and Data Science. Outside of all that: competitive
-            powerlifting, badminton, pickleball, snowboarding, running, travel, and mechanical keyboards.
+            Previously at Google, ServiceNow, Kaiser Permanente, Bloom Energy, and Playhouse. Off the
+            clock: founder of Girls Who Code Berkeley, President of Barbell at Berkeley, and a competitive
+            powerlifter.
           </p>
           <div class="skills">
             <h3>Skills &amp; Technologies</h3>
@@ -91,9 +147,69 @@
               <li>OpenAI API</li>
             </ul>
           </div>
-          <a href="Amy_Tu_Resume.pdf" download class="btn btn-primary">Download Resume</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <span class="section-label">Career</span>
+      <h2 class="section-title">Experience</h2>
+      <p class="section-sub">Where I've worked.</p>
+
+      <!-- NOTE for Amy: adjust the dates / titles below to match your résumé exactly. -->
+      <ol class="timeline">
+        <li class="timeline-item">
+          <span class="timeline-date">2025 to Present</span>
+          <div class="timeline-body">
+            <h3>Data Analytics &amp; Automation Intern</h3>
+            <p class="timeline-org">Tesla</p>
+            <p>Python/SQL pipelines, forecasting models, and BI dashboards that automate reporting.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2024</span>
+          <div class="timeline-body">
+            <h3>Software Engineering Intern, STEP</h3>
+            <p class="timeline-org">Google</p>
+            <p>STEP program: data engineering and internal tooling with a host team.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2023</span>
+          <div class="timeline-body">
+            <h3>Intern, Compliance Tooling</h3>
+            <p class="timeline-org">ServiceNow</p>
+            <p>Internal compliance tooling and automation to streamline team workflows.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2023</span>
+          <div class="timeline-body">
+            <h3>Data Intern</h3>
+            <p class="timeline-org">Kaiser Permanente</p>
+            <p>Healthcare data analysis and reporting in a regulated environment.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2022</span>
+          <div class="timeline-body">
+            <h3>Product &amp; Automation Intern</h3>
+            <p class="timeline-org">Bloom Energy</p>
+            <p>Product automation that cut manual effort across internal processes.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2022</span>
+          <div class="timeline-body">
+            <h3>AR Web Developer Intern</h3>
+            <p class="timeline-org">Playhouse</p>
+            <p>Augmented-reality web experiences across front-end and interactive design.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -102,36 +218,34 @@
     <div class="container">
       <span class="section-label">Work</span>
       <h2 class="section-title">Projects</h2>
-      <p class="section-sub">A selection of things I've built.</p>
+      <p class="section-sub">Click a project to see how it works.</p>
       <div class="projects-grid">
 
-        <article class="project-card">
-          <div class="project-img project-img-1"></div>
+        <article class="project-card" data-project="chess" tabindex="0" role="button"
+                 aria-label="View details for Chess Strategy Analyzer">
+          <div class="project-img project-img-1">
+            <img src="assets/chess.png" alt="Chess Strategy Analyzer app screenshot" loading="lazy" />
+            <span class="project-index">01</span>
+          </div>
           <div class="project-body">
-            <div class="project-tags"><span>Python</span><span>SQL</span><span>OpenAI API</span><span>Streamlit</span><span>Stockfish</span></div>
+            <div class="project-tags"><span>Python</span><span>OpenAI API</span><span>Stockfish</span><span>Streamlit</span></div>
             <h3>Chess Strategy Analyzer</h3>
-            <p>A chess analysis tool that evaluates uploaded games, identifies blunders, and generates tailored improvement recommendations using Stockfish for engine evaluation and the OpenAI API for natural-language coaching insights.</p>
-            <div class="project-links">
-              <a href="https://github.com/amyxtu/chess-strategy-analyzer" target="_blank" rel="noopener" class="link-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                GitHub
-              </a>
-            </div>
+            <p>Upload one of your chess games and get a friendly, plain-English breakdown of how you played and what to work on.</p>
+            <span class="project-more">View details <span aria-hidden="true">&rarr;</span></span>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-img project-img-2"></div>
+        <article class="project-card" data-project="restaurant" tabindex="0" role="button"
+                 aria-label="View details for Restaurant Recommender">
+          <div class="project-img project-img-2">
+            <img src="assets/restaurant.png" alt="Restaurant Recommender app screenshot" loading="lazy" />
+            <span class="project-index">02</span>
+          </div>
           <div class="project-body">
-            <div class="project-tags"><span>Python</span><span>SQL</span><span>Yelp API</span><span>OpenAI API</span><span>Streamlit</span></div>
+            <div class="project-tags"><span>Python</span><span>Yelp API</span><span>OpenAI API</span><span>Streamlit</span></div>
             <h3>Restaurant Recommender</h3>
-            <p>An AI recommendation app that ranks restaurants by cuisine, budget, distance, ratings, and occasion-specific user preferences — powered by the Yelp API for real-time data and the OpenAI API for personalized suggestions.</p>
-            <div class="project-links">
-              <a href="https://github.com/amyxtu/restaurant-recommender" target="_blank" rel="noopener" class="link-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                GitHub
-              </a>
-            </div>
+            <p>Tell it your mood, budget, and the occasion, and it finds the perfect restaurant and explains why.</p>
+            <span class="project-more">View details <span aria-hidden="true">&rarr;</span></span>
           </div>
         </article>
 
@@ -139,12 +253,29 @@
     </div>
   </section>
 
+  <!-- Project detail modal -->
+  <div class="modal-overlay" id="project-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-hero" id="modal-hero"><span class="modal-index" id="modal-index"></span></div>
+      <div class="modal-body">
+        <h3 id="modal-title"></h3>
+        <p class="modal-overview" id="modal-overview"></p>
+        <h4 class="modal-subhead">What it does</h4>
+        <ul class="modal-features" id="modal-features"></ul>
+        <h4 class="modal-subhead">Built with</h4>
+        <div class="project-tags" id="modal-tags"></div>
+        <div class="modal-links" id="modal-links"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Contact -->
   <section id="contact">
     <div class="container">
       <span class="section-label">Contact</span>
       <h2 class="section-title">Get In Touch</h2>
-      <p class="section-sub">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+      <p class="section-sub">Want to work together, or just say hi?</p>
       <div class="contact-grid">
         <div class="contact-info">
           <div class="contact-item">
@@ -165,7 +296,17 @@
           </div>
         </div>
 
-        <form id="contact-form" class="contact-form" novalidate>
+        <!--
+          This form posts to Web3Forms (free, no backend needed).
+          TO ACTIVATE: get a free access key at https://web3forms.com (enter amyxtu@berkeley.edu),
+          then replace REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY below with the key they email you.
+          Until then, the form falls back to opening the visitor's email client.
+        -->
+        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value="New message from your portfolio site" />
+          <input type="hidden" name="from_name" value="amyxtu.github.io" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" aria-hidden="true" tabindex="-1" />
           <div class="form-row">
             <div class="form-group">
               <label for="name">Name</label>
@@ -180,7 +321,7 @@
           </div>
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+            <input type="text" id="subject" name="user_subject" placeholder="What's this about?" required />
             <span class="form-error" id="subject-error"></span>
           </div>
           <div class="form-group">
@@ -195,6 +336,10 @@
           <p class="form-success" id="form-success" hidden>
             Thanks for reaching out! I'll get back to you within 1-2 business days.
           </p>
+          <p class="form-fail" id="form-fail" hidden>
+            Something went wrong. Please email me directly at
+            <a href="mailto:amyxtu@berkeley.edu">amyxtu@berkeley.edu</a>.
+          </p>
         </form>
       </div>
     </div>
@@ -202,7 +347,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>Designed &amp; built by Amy Tu &mdash; <span id="year"></span></p>
+    <p>Designed &amp; built by Amy Tu · <span id="year"></span></p>
   </footer>
 
   <script src="script.js"></script>
