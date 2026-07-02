@@ -69,7 +69,7 @@ function renderLog() {
   const entries = loadLog();
   logList.innerHTML = entries.map((e, i) =>
     `<li><span><span class="ex">${escapeHtml(e.ex)}</span>
-      <span class="meta"> — ${e.wt} lb × ${e.sets} × ${e.reps}</span></span>
+      <span class="meta"> : ${e.wt} lb × ${e.sets} × ${e.reps}</span></span>
       <button data-i="${i}" aria-label="Remove">&times;</button></li>`
   ).join('');
   const volume = entries.reduce((s, e) => s + e.wt * e.sets * e.reps, 0);
