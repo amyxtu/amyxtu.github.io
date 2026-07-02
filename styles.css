@@ -689,6 +689,7 @@ img, svg { display: block; }
   border-radius: 50%;
   background: var(--accent);
 }
+#modal-tags { margin-bottom: 30px; }
 .modal-links { display: flex; gap: 14px; flex-wrap: wrap; }
 
 /* ── Contact ──────────────────────────────────── */

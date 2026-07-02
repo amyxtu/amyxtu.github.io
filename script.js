@@ -143,13 +143,13 @@ const PROJECTS = {
     image: 'assets/chess.png',
     title: 'Chess Strategy Analyzer',
     tags: ['Python', 'SQL (SQLite)', 'OpenAI API', 'Stockfish', 'Streamlit', 'python-chess'],
-    overview: 'An AI chess coach built with Python and Streamlit. Upload a PGN game and it runs Stockfish evaluations on every move, flags blunders automatically, and turns the analysis into plain-English coaching with GPT-4o-mini, saving every analysis so you can revisit it later.',
+    overview: 'Like having a coach look over your shoulder. Upload one of your chess games and it walks through how you played, points out where things went wrong, and explains what to work on next, all in plain English.',
     features: [
-      'Parses PGN files exported from Lichess, Chess.com, or any standard source',
-      'Move-by-move evaluation with the Stockfish engine',
-      'Automatic blunder detection with a configurable threshold',
-      'AI game summary, key moments, and improvement tips',
-      'SQLite history with a sidebar to review past analyses'
+      'Reads a saved game from Chess.com, Lichess, or anywhere else',
+      'Checks every move against a world-class chess engine',
+      'Automatically points out your biggest mistakes',
+      'Writes a friendly recap with tips to improve',
+      'Keeps a history of the games you\'ve reviewed'
     ],
     github: 'https://github.com/amyxtu/chess-strategy-analyzer',
     demo: ''
@@ -159,13 +159,13 @@ const PROJECTS = {
     image: 'assets/restaurant.png',
     title: 'Restaurant Recommender',
     tags: ['Python', 'SQL (SQLite)', 'Yelp API', 'OpenAI API', 'Streamlit', 'requests'],
-    overview: 'An AI restaurant-discovery app. Enter your location, cuisine, budget, and occasion; it queries the Yelp Fusion API for real-time results, then uses GPT-4o-mini to rank them and explain, in one sentence each, why they fit what you asked for.',
+    overview: 'Like asking a friend who always knows the right spot. Tell it where you are, what you\'re in the mood for, your budget, and the occasion, and it finds real restaurants nearby and explains, in a sentence each, why they\'re a good fit.',
     features: [
-      'Live restaurant search via the Yelp Fusion API',
-      'Filters by cuisine, budget ($ to $$$$), and open-now status',
-      'AI ranking with personalized one-sentence explanations',
-      'Handles dietary-restriction notes',
-      'SQLite history to revisit past searches'
+      'Searches real, up-to-date restaurants near you',
+      'Filters by cuisine, budget, and what\'s open now',
+      'Ranks the best matches and tells you why each one fits',
+      'Takes dietary needs into account',
+      'Remembers your past searches'
     ],
     github: 'https://github.com/amyxtu/restaurant-recommender',
     demo: ''
