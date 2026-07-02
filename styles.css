@@ -852,12 +852,17 @@ footer {
     display: flex;
     flex-direction: column;
     position: fixed;
-    inset: var(--nav-h) 0 0 0;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    height: calc(100vh - var(--nav-h));
+    height: calc(100dvh - var(--nav-h));
     background: var(--bg);
     align-items: center;
     justify-content: center;
     gap: 40px;
     font-size: 1rem;
+    z-index: 90;
   }
 
   #hero { padding: 0 24px; }
