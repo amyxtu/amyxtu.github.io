@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant Recommender · Amy Tu</title>
+  <meta name="description" content="Restaurant Recommender: tell it your mood, budget, and occasion and it finds the perfect spot. Try the live demo, with curated San Jose Yelp Elite picks, right on this page." />
+  <meta name="theme-color" content="#6d635a" />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../project.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="../../">&larr; Back to portfolio</a>
+      <span class="eyebrow">Project 02</span>
+      <h1>Restaurant Recommender</h1>
+      <p class="tagline">Tell it your mood, budget, and the occasion, and it finds the perfect restaurant and explains why. Built by a San Jose Yelp Elite who takes recommendations seriously.</p>
+      <div class="tags"><span>Python</span><span>Yelp API</span><span>OpenAI API</span><span>Streamlit</span></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <span class="section-label">Overview</span>
+      <h2>Like asking a friend who always knows the right spot</h2>
+      <p class="lead">Tell it where you are, what you're in the mood for, your budget, and the occasion, and it finds real restaurants nearby and explains, in a sentence each, why they're a good fit. The full app queries the Yelp Fusion API for live results and uses GPT-4o-mini to write the explanations.</p>
+    </section>
+
+    <section>
+      <span class="section-label">What it does</span>
+      <h2>Highlights</h2>
+      <ul class="features">
+        <li>Searches real, up-to-date restaurants near you (full app, via Yelp)</li>
+        <li>Filters by cuisine, budget, and what's open now</li>
+        <li>Ranks the best matches and tells you why each one fits</li>
+        <li>Takes dietary needs into account</li>
+        <li>Remembers your past searches</li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="section-label">Try it</span>
+      <h2>Live demo</h2>
+      <p class="lead" style="margin-bottom:20px">This runs the real ranking logic against a curated set of San Jose favorites, so it works instantly with no API keys. Pick a cuisine, budget, and occasion below.</p>
+      <div class="demo-frame-wrap">
+        <div class="demo-toolbar">
+          <span class="label">amyxtu.github.io/restaurant-demo</span>
+          <a href="../../restaurant-demo/" target="_blank" rel="noopener">Open full screen &#8599;</a>
+        </div>
+        <iframe class="demo-frame" src="../../restaurant-demo/" title="Restaurant Recommender live demo" loading="lazy"></iframe>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../restaurant-demo/" target="_blank" rel="noopener">Open Full Demo</a>
+        <a class="btn btn-secondary" href="https://github.com/amyxtu/restaurant-recommender" target="_blank" rel="noopener">View Code</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p><a href="../../#projects">See all projects</a> · Built by Amy Tu</p>
+  </footer>
+</body>
+</html>

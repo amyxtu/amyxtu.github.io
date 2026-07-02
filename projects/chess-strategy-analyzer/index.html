@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chess Strategy Analyzer · Amy Tu</title>
+  <meta name="description" content="Chess Strategy Analyzer: upload a game and get engine evaluations and blunder detection. Try the live, real Stockfish-powered demo right on this page." />
+  <meta name="theme-color" content="#6d635a" />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../project.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="../../">&larr; Back to portfolio</a>
+      <span class="eyebrow">Project 01</span>
+      <h1>Chess Strategy Analyzer</h1>
+      <p class="tagline">Upload a chess game and get a coach's-eye breakdown: engine evaluations on every move and the spots where things went wrong.</p>
+      <div class="tags"><span>Python</span><span>OpenAI API</span><span>Stockfish</span><span>Streamlit</span><span>python-chess</span></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <span class="section-label">Overview</span>
+      <h2>Like having a coach look over your shoulder</h2>
+      <p class="lead">Upload one of your games and it walks through how you played, points out where things went wrong, and explains what to work on next, all in plain English. The full app pairs a real chess engine with GPT-4o-mini so the feedback reads like a person wrote it, not a spreadsheet.</p>
+    </section>
+
+    <section>
+      <span class="section-label">What it does</span>
+      <h2>Highlights</h2>
+      <ul class="features">
+        <li>Reads a saved game from Chess.com, Lichess, or anywhere else</li>
+        <li>Checks every move against a real chess engine</li>
+        <li>Automatically points out the biggest mistakes</li>
+        <li>Writes a friendly recap with tips to improve (full app, via OpenAI)</li>
+        <li>Keeps a history of the games you've reviewed</li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="section-label">Try it</span>
+      <h2>Live demo</h2>
+      <p class="lead" style="margin-bottom:20px">This is the actual engine analysis running: a real Stockfish build compiled to WebAssembly, executing in your browser right now. Paste a PGN or load the sample game below.</p>
+      <div class="demo-frame-wrap">
+        <div class="demo-toolbar">
+          <span class="label">amyxtu.github.io/chess-demo</span>
+          <a href="../../chess-demo/" target="_blank" rel="noopener">Open full screen &#8599;</a>
+        </div>
+        <iframe class="demo-frame" src="../../chess-demo/" title="Chess Strategy Analyzer live demo" loading="lazy"></iframe>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../chess-demo/" target="_blank" rel="noopener">Open Full Demo</a>
+        <a class="btn btn-secondary" href="https://github.com/amyxtu/chess-strategy-analyzer" target="_blank" rel="noopener">View Code</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p><a href="../../#projects">See all projects</a> · Built by Amy Tu</p>
+  </footer>
+</body>
+</html>

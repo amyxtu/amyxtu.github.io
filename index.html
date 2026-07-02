@@ -217,11 +217,10 @@
     <div class="container">
       <span class="section-label">Work</span>
       <h2 class="section-title">Projects</h2>
-      <p class="section-sub">Click a project to see how it works.</p>
+      <p class="section-sub">Click a project for the full write-up and a live demo.</p>
       <div class="projects-grid">
 
-        <article class="project-card" data-project="chess" tabindex="0" role="button"
-                 aria-label="View details for Chess Strategy Analyzer">
+        <a class="project-card" href="projects/chess-strategy-analyzer/">
           <div class="project-img project-img-1">
             <img src="assets/chess.png" alt="Chess Strategy Analyzer app screenshot" loading="lazy" />
             <span class="project-index">01</span>
@@ -230,12 +229,11 @@
             <div class="project-tags"><span>Python</span><span>OpenAI API</span><span>Stockfish</span><span>Streamlit</span></div>
             <h3>Chess Strategy Analyzer</h3>
             <p>Upload one of your chess games and get a friendly, plain-English breakdown of how you played and what to work on.</p>
-            <span class="project-more">View details <span aria-hidden="true">&rarr;</span></span>
+            <span class="project-more">View project &amp; live demo <span aria-hidden="true">&rarr;</span></span>
           </div>
-        </article>
+        </a>
 
-        <article class="project-card" data-project="restaurant" tabindex="0" role="button"
-                 aria-label="View details for Restaurant Recommender">
+        <a class="project-card" href="projects/restaurant-recommender/">
           <div class="project-img project-img-2">
             <img src="assets/restaurant.png" alt="Restaurant Recommender app screenshot" loading="lazy" />
             <span class="project-index">02</span>
@@ -244,12 +242,11 @@
             <div class="project-tags"><span>Python</span><span>Yelp API</span><span>OpenAI API</span><span>Streamlit</span></div>
             <h3>Restaurant Recommender</h3>
             <p>Tell it your mood, budget, and the occasion, and it finds the perfect restaurant and explains why.</p>
-            <span class="project-more">View details <span aria-hidden="true">&rarr;</span></span>
+            <span class="project-more">View project &amp; live demo <span aria-hidden="true">&rarr;</span></span>
           </div>
-        </article>
+        </a>
 
-        <article class="project-card" data-project="fitness" tabindex="0" role="button"
-                 aria-label="View details for Lifting Toolkit">
+        <a class="project-card" href="projects/lifting-toolkit/">
           <div class="project-img project-img-3">
             <img src="assets/fitness.png" alt="Lifting Toolkit app screenshot" loading="lazy" />
             <span class="project-index">03</span>
@@ -258,30 +255,13 @@
             <div class="project-tags"><span>JavaScript</span><span>HTML/CSS</span><span>Local Storage</span></div>
             <h3>Lifting Toolkit</h3>
             <p>A gym companion I built: estimate your one-rep max, do barbell plate math, and log your workouts.</p>
-            <span class="project-more">View details <span aria-hidden="true">&rarr;</span></span>
+            <span class="project-more">View project &amp; live demo <span aria-hidden="true">&rarr;</span></span>
           </div>
-        </article>
+        </a>
 
       </div>
     </div>
   </section>
-
-  <!-- Project detail modal -->
-  <div class="modal-overlay" id="project-modal" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
-      <div class="modal-hero" id="modal-hero"><span class="modal-index" id="modal-index"></span></div>
-      <div class="modal-body">
-        <h3 id="modal-title"></h3>
-        <p class="modal-overview" id="modal-overview"></p>
-        <h4 class="modal-subhead">What it does</h4>
-        <ul class="modal-features" id="modal-features"></ul>
-        <h4 class="modal-subhead">Built with</h4>
-        <div class="project-tags" id="modal-tags"></div>
-        <div class="modal-links" id="modal-links"></div>
-      </div>
-    </div>
-  </div>
 
   <!-- Contact -->
   <section id="contact">
