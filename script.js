@@ -159,7 +159,7 @@ const PROJECTS = {
     image: 'assets/restaurant.png',
     title: 'Restaurant Recommender',
     tags: ['Python', 'SQL (SQLite)', 'Yelp API', 'OpenAI API', 'Streamlit', 'requests'],
-    overview: 'Like asking a friend who always knows the right spot. Tell it where you are, what you\'re in the mood for, your budget, and the occasion, and it finds real restaurants nearby and explains, in a sentence each, why they\'re a good fit.',
+    overview: 'Like asking a friend who always knows the right spot. Tell it where you are, what you\'re in the mood for, your budget, and the occasion, and it finds real restaurants nearby and explains, in a sentence each, why they\'re a good fit. As a San Jose Yelp Elite, I care a lot about a good recommendation.',
     features: [
       'Searches real, up-to-date restaurants near you',
       'Filters by cuisine, budget, and what\'s open now',
@@ -168,7 +168,23 @@ const PROJECTS = {
       'Remembers your past searches'
     ],
     github: 'https://github.com/amyxtu/restaurant-recommender',
-    demo: ''
+    demo: 'restaurant-demo/'
+  },
+  fitness: {
+    index: '03',
+    image: 'assets/fitness.png',
+    title: 'Lifting Toolkit',
+    tags: ['JavaScript', 'HTML/CSS', 'Local Storage'],
+    overview: 'A little gym companion I built for myself while training for powerlifting and working toward my personal-training certification. Three quick tools in one page, and everything runs in your browser and saves on your device.',
+    features: [
+      'Estimate your one-rep max and see training percentages',
+      'Barbell plate math: what to load on each side',
+      'Log today\'s sets and track your total volume',
+      'Saves locally, so your log is there next time',
+      'Fast, clean, and works on your phone at the gym'
+    ],
+    github: 'https://github.com/amyxtu/amyxtu.github.io/tree/main/fitness',
+    demo: 'fitness/'
   }
 };
 
