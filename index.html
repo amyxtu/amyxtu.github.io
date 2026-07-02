@@ -218,42 +218,50 @@
     <div class="container">
       <span class="section-label">Work</span>
       <h2 class="section-title">Projects</h2>
-      <p class="section-sub">A selection of things I've built.</p>
+      <p class="section-sub">Click a project to see how it works.</p>
       <div class="projects-grid">
 
-        <article class="project-card">
-          <div class="project-img project-img-1"></div>
+        <article class="project-card" data-project="chess" tabindex="0" role="button"
+                 aria-label="View details for Chess Strategy Analyzer">
+          <div class="project-img project-img-1"><span class="project-index">01</span></div>
           <div class="project-body">
-            <div class="project-tags"><span>Python</span><span>SQL</span><span>OpenAI API</span><span>Streamlit</span><span>Stockfish</span></div>
+            <div class="project-tags"><span>Python</span><span>OpenAI API</span><span>Stockfish</span><span>Streamlit</span></div>
             <h3>Chess Strategy Analyzer</h3>
-            <p>Analyzes your games, flags blunders, and coaches improvements with Stockfish evaluation and OpenAI insights.</p>
-            <div class="project-links">
-              <a href="https://github.com/amyxtu/chess-strategy-analyzer" target="_blank" rel="noopener" class="link-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                GitHub
-              </a>
-            </div>
+            <p>Upload a game, get engine evaluations on every move, and receive natural-language coaching.</p>
+            <span class="project-more">View details <span aria-hidden="true">&rarr;</span></span>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-img project-img-2"></div>
+        <article class="project-card" data-project="restaurant" tabindex="0" role="button"
+                 aria-label="View details for Restaurant Recommender">
+          <div class="project-img project-img-2"><span class="project-index">02</span></div>
           <div class="project-body">
-            <div class="project-tags"><span>Python</span><span>SQL</span><span>Yelp API</span><span>OpenAI API</span><span>Streamlit</span></div>
+            <div class="project-tags"><span>Python</span><span>Yelp API</span><span>OpenAI API</span><span>Streamlit</span></div>
             <h3>Restaurant Recommender</h3>
-            <p>Ranks restaurants by cuisine, budget, distance, and occasion, using the Yelp API for live data and OpenAI for personalized picks.</p>
-            <div class="project-links">
-              <a href="https://github.com/amyxtu/restaurant-recommender" target="_blank" rel="noopener" class="link-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                GitHub
-              </a>
-            </div>
+            <p>Live Yelp search ranked and explained by AI for your cuisine, budget, and occasion.</p>
+            <span class="project-more">View details <span aria-hidden="true">&rarr;</span></span>
           </div>
         </article>
 
       </div>
     </div>
   </section>
+
+  <!-- Project detail modal -->
+  <div class="modal-overlay" id="project-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-hero" id="modal-hero"><span class="modal-index" id="modal-index"></span></div>
+      <div class="modal-body">
+        <div class="project-tags" id="modal-tags"></div>
+        <h3 id="modal-title"></h3>
+        <p class="modal-overview" id="modal-overview"></p>
+        <h4 class="modal-subhead">Highlights</h4>
+        <ul class="modal-features" id="modal-features"></ul>
+        <div class="modal-links" id="modal-links"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Contact -->
   <section id="contact">
