@@ -132,3 +132,41 @@ form.addEventListener('submit', async e => {
   }
 });
 
+
+// ── Rotating word in the hero tagline ───────────
+const rotateEl = document.getElementById('rotate-word');
+if (rotateEl) {
+  const WORDS = ['pipelines', 'dashboards', 'AI tools', 'one-rep maxes'];
+  let wi = 0;
+  setInterval(() => {
+    rotateEl.classList.add('swap');
+    setTimeout(() => {
+      wi = (wi + 1) % WORDS.length;
+      rotateEl.textContent = WORDS[wi];
+      rotateEl.classList.remove('swap');
+    }, 300);
+  }, 2600);
+}
+
+// ── Sticker parallax on cursor (desktop only) ───
+const hero = document.getElementById('hero');
+const stickers = document.querySelectorAll('.sticker');
+if (hero && stickers.length && window.matchMedia('(hover: hover)').matches) {
+  let raf = null;
+  hero.addEventListener('mousemove', e => {
+    if (raf) return;
+    raf = requestAnimationFrame(() => {
+      const r = hero.getBoundingClientRect();
+      const dx = (e.clientX - r.left - r.width / 2) / r.width;
+      const dy = (e.clientY - r.top - r.height / 2) / r.height;
+      stickers.forEach(s => {
+        const depth = parseFloat(s.dataset.depth || '1');
+        s.style.translate = `${dx * depth * 10}px ${dy * depth * 8}px`;
+      });
+      raf = null;
+    });
+  });
+  hero.addEventListener('mouseleave', () => {
+    stickers.forEach(s => { s.style.translate = '0px 0px'; });
+  });
+}
