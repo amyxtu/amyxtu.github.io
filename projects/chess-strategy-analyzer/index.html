@@ -20,6 +20,11 @@
       <h1>Chess Strategy Analyzer</h1>
       <p class="tagline">Upload a chess game and get a coach's-eye breakdown: engine evaluations on every move and the spots where things went wrong.</p>
       <div class="tags"><span>Python</span><span>OpenAI API</span><span>Stockfish</span><span>Streamlit</span><span>python-chess</span></div>
+      <div class="facts">
+        <div class="fact"><span class="k">Type</span><span class="v">Personal project</span></div>
+        <div class="fact"><span class="k">Built with</span><span class="v">Python · Stockfish · OpenAI</span></div>
+        <div class="fact"><span class="k">Status</span><span class="v"><span class="live-dot"></span>Live demo below</span></div>
+      </div>
     </div>
   </header>
 
@@ -43,6 +48,22 @@
     </section>
 
     <section>
+      <span class="section-label">In action</span>
+      <h2>Examples</h2>
+      <p class="lead" style="margin-bottom:24px">Real output from the sample game (Morphy's "Opera Game"), analyzed live by the engine, not mockups.</p>
+      <div class="gallery">
+        <figure class="shot">
+          <img src="../../assets/shots/chess-summary.png" alt="Analysis summary listing six likely blunders with the evaluation swing for each" loading="lazy" />
+          <figcaption><b>Blunder summary.</b> The engine flags every move where the evaluation swung 1.5+ pawns against the player, in plain English.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../../assets/shots/chess-table.png" alt="Move-by-move table with engine evaluations, blunders highlighted" loading="lazy" />
+          <figcaption><b>Move-by-move evaluations.</b> Every ply scored from White's perspective, with blunders highlighted and mate sequences detected.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
       <span class="section-label">Try it</span>
       <h2>Live demo</h2>
       <p class="lead" style="margin-bottom:20px">This is the actual engine analysis running: a real Stockfish build compiled to WebAssembly, executing in your browser right now. Paste a PGN or load the sample game below.</p>
@@ -58,6 +79,11 @@
         <a class="btn btn-secondary" href="https://github.com/amyxtu/chess-strategy-analyzer" target="_blank" rel="noopener">View Code</a>
       </div>
     </section>
+
+    <nav class="project-nav">
+      <a class="prev" href="../lifting-toolkit/"><span class="dir">&larr; Previous</span><span class="ttl">Lifting Toolkit</span></a>
+      <a class="next" href="../restaurant-recommender/"><span class="dir">Next &rarr;</span><span class="ttl">Restaurant Recommender</span></a>
+    </nav>
   </main>
 
   <footer class="page-footer">
