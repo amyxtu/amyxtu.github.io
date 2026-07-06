@@ -435,6 +435,13 @@ img, svg { display: block; }
   line-height: 1.85;
   font-weight: 300;
 }
+.about-text > p a {
+  color: var(--accent);
+  font-weight: 400;
+  border-bottom: 1px solid var(--accent-soft);
+  transition: border-color var(--transition);
+}
+.about-text > p a:hover { border-color: var(--accent); }
 .about-text h3 {
   font-size: 0.7rem;
   font-weight: 400;
