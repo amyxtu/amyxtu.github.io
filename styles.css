@@ -14,6 +14,7 @@
   --card-img-1: #eeeae5;
   --card-img-2: #eae8e4;
   --card-img-3: #e7e8e9;
+  --card-img-4: #e9ece3;
   --radius:     14px;
   --radius-sm:  8px;
   --nav-h:      64px;
@@ -34,6 +35,7 @@
   --card-img-1: #292724;
   --card-img-2: #262523;
   --card-img-3: #232528;
+  --card-img-4: #252822;
 }
 
 body { transition: background-color var(--transition), color var(--transition); }
@@ -473,6 +475,57 @@ img, svg { display: block; }
   border-color: var(--accent);
   background: var(--accent-soft);
 }
+.skill-tags li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.skill-tags li svg {
+  width: 13px;
+  height: 13px;
+  color: var(--accent);
+  flex: none;
+}
+
+/* ── Articles / writing ───────────────────────── */
+.articles {
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+.articles-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.45rem;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.articles-note {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+.article-list { list-style: none; margin-top: 18px; }
+.article-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 14px 2px;
+  border-bottom: 1px solid var(--border);
+  transition: color var(--transition);
+}
+.article-list li a:hover .article-title { color: var(--accent); }
+.article-list .article-title {
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: color var(--transition);
+}
+.article-list .article-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
 
 /* ── Experience ───────────────────────────────── */
 #experience { padding: 150px 0; background: var(--bg-soft); }
@@ -587,6 +640,7 @@ img, svg { display: block; }
 .project-img-1 { background: var(--card-img-1); }
 .project-img-2 { background: var(--card-img-2); }
 .project-img-3 { background: var(--card-img-3); }
+.project-img-4 { background: var(--card-img-4); }
 
 .project-body { padding: 28px 28px 32px; }
 .project-tags {
