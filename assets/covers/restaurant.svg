@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 376" role="img" aria-label="A plated dish with cutlery and rating stars">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#f7f1e9"/>
+      <stop offset="100%" stop-color="#ecdfd2"/>
+    </radialGradient>
+  </defs>
+  <rect width="620" height="376" fill="url(#bg)"/>
+
+  <!-- stars -->
+  <g fill="#c9a25f">
+    <path d="M270 74 l6.5 13.5 14.5 2 -10.5 10 2.5 14.5 -13 -7 -13 7 2.5 -14.5 -10.5 -10 14.5 -2 Z"/>
+    <path d="M330 62 l6.5 13.5 14.5 2 -10.5 10 2.5 14.5 -13 -7 -13 7 2.5 -14.5 -10.5 -10 14.5 -2 Z"/>
+    <path d="M390 74 l6.5 13.5 14.5 2 -10.5 10 2.5 14.5 -13 -7 -13 7 2.5 -14.5 -10.5 -10 14.5 -2 Z" opacity="0.45"/>
+  </g>
+
+  <ellipse cx="330" cy="330" rx="200" ry="14" fill="#3d332b" opacity="0.07"/>
+
+  <!-- plate -->
+  <circle cx="330" cy="234" r="92" fill="#fdfaf5"/>
+  <circle cx="330" cy="234" r="90" fill="none" stroke="#e3d5c4" stroke-width="3"/>
+  <circle cx="330" cy="234" r="62" fill="#f3e8da"/>
+  <!-- food -->
+  <circle cx="318" cy="228" r="26" fill="#c98a75"/>
+  <circle cx="348" cy="244" r="18" fill="#a8b18a"/>
+  <circle cx="336" cy="212" r="11" fill="#e3b587"/>
+  <!-- steam -->
+  <g stroke="#b3a89c" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6">
+    <path d="M310 148 q6 -12 0 -24"/>
+    <path d="M334 142 q6 -12 0 -24"/>
+  </g>
+
+  <!-- fork -->
+  <g fill="#93857a">
+    <rect x="188" y="196" width="9" height="120" rx="4.5"/>
+    <rect x="176" y="160" width="6" height="42" rx="3"/>
+    <rect x="189.5" y="160" width="6" height="42" rx="3"/>
+    <rect x="203" y="160" width="6" height="42" rx="3"/>
+    <path d="M176 196 q16.5 14 33 0 l0 -8 -33 0 Z"/>
+  </g>
+  <!-- knife -->
+  <g fill="#93857a">
+    <rect x="452" y="196" width="9" height="120" rx="4.5"/>
+    <path d="M452 200 q-14 -46 4 -80 q10 34 5 80 Z"/>
+  </g>
+</svg>
