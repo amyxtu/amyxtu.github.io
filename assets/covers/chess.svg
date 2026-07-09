@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 376" role="img" aria-label="Chess pieces on a board">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#f4f0ea"/>
+      <stop offset="100%" stop-color="#e9e4dd"/>
+    </radialGradient>
+  </defs>
+  <rect width="620" height="376" fill="url(#bg)"/>
+
+  <!-- faint board -->
+  <g opacity="0.5">
+    <rect x="150" y="288" width="320" height="26" fill="#ddd5cb"/>
+    <rect x="150" y="288" width="40" height="26" fill="#cfc5b8"/>
+    <rect x="230" y="288" width="40" height="26" fill="#cfc5b8"/>
+    <rect x="310" y="288" width="40" height="26" fill="#cfc5b8"/>
+    <rect x="390" y="288" width="40" height="26" fill="#cfc5b8"/>
+  </g>
+  <ellipse cx="310" cy="316" rx="190" ry="14" fill="#3d332b" opacity="0.07"/>
+
+  <!-- pawn -->
+  <g fill="#93857a">
+    <circle cx="212" cy="182" r="20"/>
+    <path d="M186 262 Q190 210 212 210 Q234 210 238 262 L240 272 Q240 280 231 280 L193 280 Q184 280 184 272 Z"/>
+    <rect x="178" y="280" width="68" height="14" rx="7"/>
+    <circle cx="205" cy="176" r="5.5" fill="#f6f1ea" opacity="0.7"/>
+  </g>
+
+  <!-- king -->
+  <g fill="#6d635a">
+    <rect x="300" y="84" width="10" height="30" rx="4"/>
+    <rect x="290" y="93" width="30" height="10" rx="4"/>
+    <path d="M287 132 Q292 114 305 114 Q318 114 323 132 L318 148 L292 148 Z"/>
+    <path d="M276 268 Q280 160 305 160 Q330 160 334 268 L337 278 Q337 288 327 288 L283 288 Q273 288 273 278 Z"/>
+    <rect x="266" y="288" width="78" height="16" rx="8"/>
+    <path d="M283 176 Q305 186 327 176" stroke="#f6f1ea" stroke-width="4" fill="none" opacity="0.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- rook -->
+  <g fill="#b3a698">
+    <path d="M382 156 L382 132 L394 132 L394 144 L406 144 L406 132 L418 132 L418 144 L430 144 L430 132 L442 132 L442 156 L434 168 L390 168 Z"/>
+    <path d="M386 262 Q388 176 412 176 Q436 176 438 262 L441 272 Q441 280 432 280 L392 280 Q383 280 383 272 Z"/>
+    <rect x="376" y="280" width="72" height="14" rx="7"/>
+  </g>
+</svg>

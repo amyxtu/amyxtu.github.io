@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 376" role="img" aria-label="A bowl of matcha with a bamboo whisk and leaves">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#f2f4ea"/>
+      <stop offset="100%" stop-color="#e4e9d6"/>
+    </radialGradient>
+  </defs>
+  <rect width="620" height="376" fill="url(#bg)"/>
+
+  <!-- leaves -->
+  <g fill="#8a9a68">
+    <path d="M158 96 q34 -26 66 -10 q-18 34 -54 30 q-8 -2 -12 -20 Z" opacity="0.75"/>
+    <path d="M446 82 q30 -8 46 12 q-22 20 -44 8 q-4 -8 -2 -20 Z" opacity="0.55"/>
+  </g>
+
+  <ellipse cx="310" cy="322" rx="190" ry="13" fill="#3a4028" opacity="0.08"/>
+
+  <!-- whisk (chasen) leaning in bowl -->
+  <g transform="rotate(18 400 160)">
+    <rect x="394" y="66" width="13" height="52" rx="6" fill="#c4ac91"/>
+    <path d="M382 118 L419 118 L426 190 L375 190 Z" fill="#d9c3a5"/>
+    <g stroke="#b99b78" stroke-width="3.4" stroke-linecap="round">
+      <line x1="381" y1="126" x2="378" y2="188"/>
+      <line x1="391" y1="126" x2="390" y2="190"/>
+      <line x1="401" y1="126" x2="402" y2="190"/>
+      <line x1="411" y1="126" x2="414" y2="190"/>
+      <line x1="420" y1="126" x2="424" y2="186"/>
+    </g>
+  </g>
+
+  <!-- bowl -->
+  <path d="M196 208 L424 208 Q420 296 366 308 L254 308 Q200 296 196 208 Z" fill="#75835a"/>
+  <path d="M196 208 L424 208 Q420 250 410 262 L210 262 Q200 250 196 208 Z" fill="#67744e"/>
+  <ellipse cx="310" cy="208" rx="114" ry="20" fill="#a8b566"/>
+  <ellipse cx="310" cy="206" rx="102" ry="15" fill="#b7c374"/>
+  <path d="M250 202 q30 10 60 0 q30 -10 58 2" stroke="#a3ad61" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <rect x="262" y="308" width="96" height="12" rx="6" fill="#5f6b47"/>
+
+  <!-- steam -->
+  <g stroke="#8f9a72" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.55">
+    <path d="M282 168 q6 -12 0 -24"/>
+    <path d="M310 160 q6 -12 0 -24"/>
+    <path d="M338 168 q6 -12 0 -24"/>
+  </g>
+</svg>
