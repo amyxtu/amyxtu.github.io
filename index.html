@@ -410,14 +410,9 @@
           </div>
         </div>
 
-        <!--
-          This form posts to Web3Forms (free, no backend needed).
-          TO ACTIVATE: get a free access key at https://web3forms.com (enter amyxtu@berkeley.edu),
-          then replace REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY below with the key they email you.
-          Until then, the form falls back to opening the visitor's email client.
-        -->
+        <!-- Posts to Web3Forms; submissions are delivered to amyxtu@berkeley.edu. -->
         <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-          <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="access_key" value="b2eb6177-5ddb-4076-8208-c4657b9f189f" />
           <input type="hidden" name="subject" value="New message from your portfolio site" />
           <input type="hidden" name="from_name" value="amyxtu.github.io" />
           <input type="checkbox" name="botcheck" class="hidden" style="display:none" aria-hidden="true" tabindex="-1" />
