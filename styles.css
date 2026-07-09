@@ -544,6 +544,17 @@ img, svg { display: block; }
   transition: transform var(--transition);
 }
 .timeline-item:hover .timeline-logo { transform: scale(1.08) rotate(-4deg); }
+.timeline-logo svg {
+  width: 21px;
+  height: 21px;
+  fill: var(--logo-fg);
+}
+.timeline-logo .now-mark {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
 .timeline-body p:last-child {
   font-size: 0.88rem;
   color: var(--text-muted);
