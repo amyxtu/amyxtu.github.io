@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 376" role="img" aria-label="A pickleball paddle and ball beside a net">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#eef2f3"/>
+      <stop offset="100%" stop-color="#dde6e8"/>
+    </radialGradient>
+  </defs>
+  <rect width="620" height="376" fill="url(#bg)"/>
+
+  <!-- court line hint -->
+  <g opacity="0.5">
+    <rect x="80" y="300" width="460" height="5" rx="2.5" fill="#b9c8cc"/>
+    <rect x="305" y="258" width="5" height="47" fill="#b9c8cc"/>
+  </g>
+
+  <!-- net -->
+  <g opacity="0.75">
+    <rect x="404" y="196" width="6" height="106" rx="3" fill="#8aa3ad"/>
+    <rect x="546" y="196" width="6" height="106" rx="3" fill="#8aa3ad"/>
+    <rect x="398" y="192" width="160" height="10" rx="5" fill="#5b7c8a"/>
+    <g stroke="#9fb3ba" stroke-width="2.6">
+      <line x1="416" y1="202" x2="416" y2="280"/>
+      <line x1="440" y1="202" x2="440" y2="280"/>
+      <line x1="464" y1="202" x2="464" y2="280"/>
+      <line x1="488" y1="202" x2="488" y2="280"/>
+      <line x1="512" y1="202" x2="512" y2="280"/>
+      <line x1="536" y1="202" x2="536" y2="280"/>
+      <line x1="408" y1="222" x2="552" y2="222"/>
+      <line x1="408" y1="248" x2="552" y2="248"/>
+      <line x1="408" y1="274" x2="552" y2="274"/>
+    </g>
+  </g>
+
+  <ellipse cx="250" cy="318" rx="170" ry="12" fill="#25333a" opacity="0.08"/>
+
+  <!-- paddle -->
+  <g transform="rotate(-14 220 190)">
+    <rect x="206" y="238" width="26" height="70" rx="12" fill="#c4ac91"/>
+    <path d="M162 96 Q162 58 219 58 Q276 58 276 96 L276 176 Q276 244 219 244 Q162 244 162 176 Z" fill="#5b7c8a"/>
+    <path d="M176 100 Q176 72 219 72 Q262 72 262 100 L262 172 Q262 230 219 230 Q176 230 176 172 Z" fill="#6f8f9c"/>
+    <rect x="200" y="236" width="38" height="12" rx="6" fill="#8f7a63"/>
+  </g>
+
+  <!-- ball with holes -->
+  <g>
+    <circle cx="330" cy="256" r="34" fill="#d9c36a"/>
+    <circle cx="318" cy="244" r="4.6" fill="#b9a24b"/>
+    <circle cx="340" cy="240" r="4.6" fill="#b9a24b"/>
+    <circle cx="348" cy="262" r="4.6" fill="#b9a24b"/>
+    <circle cx="330" cy="258" r="4.6" fill="#b9a24b"/>
+    <circle cx="314" cy="266" r="4.6" fill="#b9a24b"/>
+    <circle cx="332" cy="276" r="4.6" fill="#b9a24b"/>
+  </g>
+</svg>
