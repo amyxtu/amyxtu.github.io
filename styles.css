@@ -551,6 +551,17 @@ img, svg { display: block; }
 }
 
 /* ── Projects ─────────────────────────────────── */
+#leadership { padding: 120px 0; }
+.campus-roles {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  max-width: 660px;
+}
+
 #projects { padding: 120px 0; }
 
 .projects-grid {
@@ -861,7 +872,7 @@ footer {
   .sticker { width: 46px; height: 46px; }
   .sticker-sm { display: none; }
 
-  #about, #experience, #projects, #contact { padding: 100px 0; }
+  #about, #experience, #leadership, #projects, #contact { padding: 100px 0; }
 
   .about-grid,
   .contact-grid {

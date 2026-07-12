@@ -28,7 +28,7 @@ navLinks.querySelectorAll('a').forEach(link => {
 
 // ── Scroll reveal ──────────────────────────────
 const revealEls = document.querySelectorAll(
-  '#about .container > *, #experience .container > *, #projects .container > *, #contact .container > *, .project-card, .timeline-item, .about-photo, .about-text, .contact-info, .contact-form'
+  '#about .container > *, #experience .container > *, #leadership .container > *, #projects .container > *, #contact .container > *, .project-card, .timeline-item, .about-photo, .about-text, .contact-info, .contact-form'
 );
 revealEls.forEach(el => el.classList.add('reveal'));
 
