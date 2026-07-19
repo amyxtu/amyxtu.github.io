@@ -259,16 +259,16 @@ img, svg { display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(26px, 6vw, 64px);
-  max-width: 760px;
+  gap: clamp(28px, 6vw, 62px);
+  max-width: 720px;
   margin: 0 auto;
+  color: var(--text-muted);
 }
 .sticker {
-  width: 58px;
-  height: 58px;
+  width: 34px;
+  height: 34px;
   flex-shrink: 0;
-  filter: drop-shadow(0 6px 10px rgba(60, 50, 40, 0.16));
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, color 0.25s ease;
   will-change: transform;
   animation: floaty 5s ease-in-out infinite;
 }
@@ -289,9 +289,11 @@ img, svg { display: block; }
 .banner-stickers .sticker:nth-child(3) { animation-delay: 1.2s; rotate: -3deg; }
 .banner-stickers .sticker:nth-child(4) { animation-delay: 1.8s; rotate: 4deg;  }
 .banner-stickers .sticker:nth-child(5) { animation-delay: 2.4s; rotate: -3deg; }
+.banner-stickers:hover { color: var(--accent); }
 .banner-stickers .sticker:hover {
-  transform: translateY(-5px) scale(1.12) rotate(0deg);
+  transform: translateY(-4px) scale(1.1) rotate(0deg);
   animation-play-state: paused;
+  color: var(--accent);
 }
 @keyframes floaty {
   0%, 100% { translate: 0 0; }
@@ -552,16 +554,6 @@ img, svg { display: block; }
 
 /* ── Projects ─────────────────────────────────── */
 #leadership { padding: 120px 0; }
-.campus-roles {
-  margin-top: 30px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  max-width: 660px;
-}
-
 #projects { padding: 120px 0; }
 
 .projects-grid {
