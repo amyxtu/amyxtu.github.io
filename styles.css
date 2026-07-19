@@ -248,32 +248,6 @@ img, svg { display: block; }
   border-bottom: 1px solid var(--border);
 }
 
-/* Sticker row: a few of my favorite things, floating above the intro */
-.hero-banner {
-  width: 100%;
-  padding: 44px 40px 0;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.05s forwards;
-}
-.banner-stickers {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(28px, 6vw, 62px);
-  max-width: 720px;
-  margin: 0 auto;
-  color: var(--text-muted);
-}
-.sticker {
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
-  transition: transform 0.25s ease, color 0.25s ease;
-  will-change: transform;
-  animation: floaty 5s ease-in-out infinite;
-}
-.sticker-sm { width: 26px; height: 26px; }
-
 /* Centered intro content */
 .hero-content {
   display: flex;
@@ -281,28 +255,9 @@ img, svg { display: block; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 56px 40px 104px;
+  padding: 80px 40px 104px;
   position: relative;
 }
-.banner-stickers .sticker:nth-child(1) { animation-delay: 0s;   rotate: -4deg; }
-.banner-stickers .sticker:nth-child(2) { animation-delay: 0.6s; rotate: 3deg;  }
-.banner-stickers .sticker:nth-child(3) { animation-delay: 1.2s; rotate: -3deg; }
-.banner-stickers .sticker:nth-child(4) { animation-delay: 1.8s; rotate: 4deg;  }
-.banner-stickers .sticker:nth-child(5) { animation-delay: 2.4s; rotate: -3deg; }
-.banner-stickers:hover { color: var(--accent); }
-.banner-stickers .sticker:hover {
-  transform: translateY(-4px) scale(1.1) rotate(0deg);
-  animation-play-state: paused;
-  color: var(--accent);
-}
-@keyframes floaty {
-  0%, 100% { translate: 0 0; }
-  50%      { translate: 0 -7px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .sticker { animation: none; }
-}
-
 .hero-greeting {
   font-size: 0.78rem;
   color: var(--text-muted);
@@ -858,11 +813,7 @@ footer {
     z-index: 90;
   }
 
-  .hero-banner { padding: 32px 24px 0; }
-  .banner-stickers { gap: 22px; }
-  .hero-content { padding: 44px 24px 80px; }
-  .sticker { width: 46px; height: 46px; }
-  .sticker-sm { display: none; }
+  .hero-content { padding: 40px 24px 80px; }
 
   #about, #experience, #leadership, #projects, #contact { padding: 100px 0; }
 
@@ -883,6 +834,5 @@ footer {
   .hero-name { font-size: clamp(3rem, 15vw, 4.2rem); }
   .hero-cta { flex-direction: column; align-items: center; }
   .projects-grid { grid-template-columns: 1fr; }
-  .sticker { width: 40px; height: 40px; }
   .hero-status { font-size: 0.68rem; padding: 7px 13px; }
 }
