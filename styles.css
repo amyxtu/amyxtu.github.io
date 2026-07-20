@@ -241,6 +241,8 @@ img, svg { display: block; }
   display: flex;
   flex-direction: column;
   position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
   padding-top: var(--nav-h);
   background:
     radial-gradient(70% 90% at 50% 0%, var(--accent-soft) 0%, transparent 70%),
@@ -248,14 +250,15 @@ img, svg { display: block; }
   border-bottom: 1px solid var(--border);
 }
 
-/* Centered intro content */
+/* Centered intro content fills the viewport */
 .hero-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 80px 40px 104px;
+  padding: 40px 40px 60px;
   position: relative;
 }
 .hero-greeting {
@@ -813,7 +816,7 @@ footer {
     z-index: 90;
   }
 
-  .hero-content { padding: 40px 24px 80px; }
+  .hero-content { padding: 40px 24px 60px; }
 
   #about, #experience, #leadership, #projects, #contact { padding: 100px 0; }
 
