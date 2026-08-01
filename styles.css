@@ -356,15 +356,18 @@ img, svg { display: block; }
 }
 
 .hero-portrait {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
   opacity: 0;
   animation: fadeUp 0.8s 0.25s forwards;
 }
 .hero-portrait img {
   width: 100%;
-  max-width: 300px;
-  aspect-ratio: 4 / 5;
+  height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: 70% 20%;
   border-radius: 22px;
   border: 5px solid rgba(255, 255, 255, 0.72);
   box-shadow: 0 30px 60px -26px rgba(60, 50, 40, 0.55);
