@@ -256,12 +256,12 @@ img, svg { display: block; }
 
 .hero-inner {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 52px;
+  grid-template-columns: 1fr 300px;
+  gap: 56px;
   align-items: center;
 }
 
@@ -361,12 +361,13 @@ img, svg { display: block; }
 }
 .hero-portrait img {
   width: 100%;
+  max-width: 300px;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center 18%;
-  border-radius: 24px;
+  object-position: center 15%;
+  border-radius: 22px;
   border: 5px solid rgba(255, 255, 255, 0.72);
-  box-shadow: 0 34px 70px -28px rgba(60, 50, 40, 0.55);
+  box-shadow: 0 30px 60px -26px rgba(60, 50, 40, 0.55);
 }
 
 [data-theme="dark"] #hero {
