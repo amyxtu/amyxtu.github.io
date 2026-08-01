@@ -256,12 +256,12 @@ img, svg { display: block; }
 
 .hero-inner {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1060px;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 56px;
+  grid-template-columns: 1fr 370px;
+  gap: 60px;
   align-items: center;
 }
 
@@ -357,8 +357,8 @@ img, svg { display: block; }
 
 .hero-portrait {
   width: 100%;
-  max-width: 300px;
-  aspect-ratio: 1 / 1;
+  max-width: 370px;
+  aspect-ratio: 4 / 5;
   margin: 0 auto;
   opacity: 0;
   animation: fadeUp 0.8s 0.25s forwards;
@@ -367,10 +367,10 @@ img, svg { display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 70% 20%;
-  border-radius: 22px;
-  border: 5px solid rgba(255, 255, 255, 0.72);
-  box-shadow: 0 30px 60px -26px rgba(60, 50, 40, 0.55);
+  object-position: 62% 14%;
+  border-radius: 24px;
+  border: 6px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 36px 72px -28px rgba(60, 50, 40, 0.6);
 }
 
 [data-theme="dark"] #hero {
